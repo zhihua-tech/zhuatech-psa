@@ -1,5 +1,5 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 */
-package cn.zhuatech.ctms.model;
+package cn.zhuatech.psa.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

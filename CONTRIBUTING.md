@@ -1,6 +1,6 @@
 # 参与贡献
 
-感谢参与 ZhuaTech CTMS。提交 Issue 或 Pull Request 前，请确认内容不包含真实业务数据、个人隐私、生产凭据或未经授权的第三方代码。
+感谢参与 ZhuaTech PSA。提交 Issue 或 Pull Request 前，请确认内容不包含真实业务数据、个人隐私、生产凭据或未经授权的第三方代码。
 
 1. 从 `main` 创建短生命周期分支；
 2. Java 代码使用 `cn.zhuatech` 包名并保留“上海如静知华信息科技有限公司”版权注释；

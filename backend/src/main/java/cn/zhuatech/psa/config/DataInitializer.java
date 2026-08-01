@@ -1,9 +1,9 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 */
-package cn.zhuatech.ctms.config;
+package cn.zhuatech.psa.config;
 
-import cn.zhuatech.ctms.domain.DomainCatalog;
-import cn.zhuatech.ctms.model.WorkItem;
-import cn.zhuatech.ctms.repository.WorkItemRepository;
+import cn.zhuatech.psa.domain.DomainCatalog;
+import cn.zhuatech.psa.model.WorkItem;
+import cn.zhuatech.psa.repository.WorkItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

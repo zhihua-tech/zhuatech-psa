@@ -3,16 +3,16 @@ services:
   mysql:
     image: mysql:8.4
     environment:
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-zhuatech_ctms}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-zhuatech_psa}
       MYSQL_USER: ${MYSQL_USER:-zhuatech}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-zhuatech_dev_password}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-zhuatech_root_password}
-    volumes: [ctms_mysql_data:/var/lib/mysql]
+    volumes: [psa_mysql_data:/var/lib/mysql]
     healthcheck: {test: ["CMD", "mysqladmin", "ping", "-h", "localhost"], interval: 10s, timeout: 5s, retries: 10}
   backend:
     build: ./backend
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-zhuatech_ctms}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+      DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-zhuatech_psa}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
       DB_USERNAME: ${MYSQL_USER:-zhuatech}
       DB_PASSWORD: ${MYSQL_PASSWORD:-zhuatech_dev_password}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
@@ -24,4 +24,4 @@ services:
     depends_on: [backend]
     ports: ["${WEB_PORT:-8090}:80"]
 volumes:
-  ctms_mysql_data:
+  psa_mysql_data:
