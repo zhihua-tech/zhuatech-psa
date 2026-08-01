@@ -1,5 +1,5 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 */
-package cn.zhuatech.ctms;
+package cn.zhuatech.psa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class CtmsApiIntegrationTests {
+class PsaApiIntegrationTests {
     @Autowired MockMvc mvc;
 
     @Test void publicAboutIsAccessible() throws Exception {
@@ -38,12 +38,14 @@ class CtmsApiIntegrationTests {
         mvc.perform(get("/api/workspace/tasks")).andExpect(status().isUnauthorized());
     }
 
-    @Test void adminCanAssessSiteActivationReadiness() throws Exception {
-        mvc.perform(post("/api/admin/site-activation").with(httpBasic("admin", "admin123"))
+    @Test void adminCanForecastEngagementMargin() throws Exception {
+        mvc.perform(post("/api/admin/engagement-margin").with(httpBasic("admin", "admin123"))
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"essentialDocuments\":50,\"completedDocuments\":40,\"ethicsApproved\":true,\"contractSigned\":false,\"investigatorsTrained\":true,\"drugStorageReady\":true}"))
+            .content("{\"contractRevenue\":1000000,\"deliveredHours\":3200,\"plannedHours\":5000,\"billableRate\":200,\"costRate\":140,\"completionPercent\":50,\"scopeChangePending\":true}"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.data.completeness").value(80.0))
-            .andExpect(jsonPath("$.data.status").value("BLOCKED"));
+            .andExpect(jsonPath("$.data.projectedCost").value(798000.0))
+            .andExpect(jsonPath("$.data.projectedMargin").value(202000.0))
+            .andExpect(jsonPath("$.data.marginRate").value(20.2))
+            .andExpect(jsonPath("$.data.status").value("WATCH"));
     }
 }

@@ -1,9 +1,9 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 */
-package cn.zhuatech.ctms.service;
+package cn.zhuatech.psa.service;
 
-import cn.zhuatech.ctms.domain.DomainCatalog;
-import cn.zhuatech.ctms.model.WorkItem;
-import cn.zhuatech.ctms.repository.WorkItemRepository;
+import cn.zhuatech.psa.domain.DomainCatalog;
+import cn.zhuatech.psa.model.WorkItem;
+import cn.zhuatech.psa.repository.WorkItemRepository;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
