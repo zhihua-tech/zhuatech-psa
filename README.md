@@ -73,3 +73,7 @@ cd frontend && npm install && npm run dev
 本仓库不含真实客户、合同、人员或财务数据。请勿提交令牌、私钥和业务敏感信息；贡献与安全流程见 [CONTRIBUTING.md](CONTRIBUTING.md) 和 [SECURITY.md](SECURITY.md)。
 
 关键词：知华科技 PSA、专业服务自动化、项目交付管理、资源排期系统、工时管理、项目毛利预测、Java PSA、Vue 管理系统、上海软件定制。
+
+## 可计费产能预测
+
+新增 `POST /api/psa/insights/billable-capacity-forecast`。系统综合顾问人数、可用工时、已签约需求和按 60% 折算的确认中商机，预测未来周期的可计费产能利用率，给出 `ADD_CAPACITY`、`REBALANCE` 或 `BALANCED` 建议，可用于资源经理的滚动排期与招聘决策。
