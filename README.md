@@ -77,3 +77,7 @@ cd frontend && npm install && npm run dev
 ## 可计费产能预测
 
 新增 `POST /api/psa/insights/billable-capacity-forecast`。系统综合顾问人数、可用工时、已签约需求和按 60% 折算的确认中商机，预测未来周期的可计费产能利用率，给出 `ADD_CAPACITY`、`REBALANCE` 或 `BALANCED` 建议，可用于资源经理的滚动排期与招聘决策。
+
+## 企业级项目财务结项
+
+新增 `POST /api/enterprise/psa/project-financial-closure`，覆盖工时、费用、开票、收入、验收、变更、WIP 和复盘，返回 `CLOSE / REVIEW / BLOCKED`。详见 [项目结项说明](docs/ENTERPRISE_PROJECT_CLOSURE.md)。
