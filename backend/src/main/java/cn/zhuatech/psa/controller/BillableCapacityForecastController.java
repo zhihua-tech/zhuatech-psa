@@ -6,12 +6,21 @@ import cn.zhuatech.psa.service.BillableCapacityForecastService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/psa/insights")
 public class BillableCapacityForecastController {
     private final BillableCapacityForecastService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public BillableCapacityForecastController(BillableCapacityForecastService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/billable-capacity-forecast")
     public ApiResponse<BillableCapacityForecastService.Result> forecast(
         @Valid @RequestBody BillableCapacityForecastService.Request request) {

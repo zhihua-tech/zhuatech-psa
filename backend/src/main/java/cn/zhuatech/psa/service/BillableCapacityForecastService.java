@@ -10,8 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BillableCapacityForecastService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         double grossCapacity = request.consultants() * request.workDays() * request.hoursPerDay();
         double netCapacity = Math.max(1, grossCapacity - request.nonBillableHours());
@@ -27,14 +33,23 @@ public class BillableCapacityForecastService {
             round(utilization), decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double value) { return Math.round(value * 10_000D) / 10_000D; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String teamCode, @Min(1) int consultants,
                           @Min(1) int workDays, @DecimalMin("0.1") double hoursPerDay,
                           @DecimalMin("0") double scheduledBillableHours,
                           @DecimalMin("0") double confirmedPipelineHours,
                           @DecimalMin("0") double nonBillableHours,
                           @DecimalMin("0.1") @DecimalMax("1") double targetUtilization) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String teamCode, double netCapacityHours, double weightedDemandHours,
                          double forecastUtilization, String decision, List<String> actions) {}
 }
