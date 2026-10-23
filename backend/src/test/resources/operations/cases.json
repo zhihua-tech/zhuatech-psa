@@ -1,0 +1,48 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "unbilledHours": "#30",
+      "candidateInvoice": "#6000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "invoiceCap": "5000"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "amountOverCap": "#1000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "billedHours": "91"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "billedHours": "90"
+    },
+    "expected": {
+      "decision": "PASS",
+      "unbilledHours": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "hourlyPrice": "0"
+    },
+    "expected": {
+      "candidateInvoice": "#0",
+      "decision": "REVIEW"
+    },
+    "error": false
+  }
+]
